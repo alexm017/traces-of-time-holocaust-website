@@ -1,0 +1,43 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # If the requested file or directory exists, don't rewrite
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Route /register to register.php
+    RewriteRule ^register/?$ register.php [L,QSA]
+
+    # Route /login to login.php
+    RewriteRule ^login/?$ login.php [L,QSA]
+    
+    RewriteRule ^profile/?$ profile.php [L,QSA]
+
+    RewriteRule ^logout/?$ logout.php [L,QSA]
+    
+    
+    RewriteRule ^holocaust/?$ holocaust.php [L,QSA]
+    RewriteRule ^carti/?$ carti.php [L,QSA]
+    RewriteRule ^filme/?$ filme.php [L,QSA]
+    RewriteRule ^harta/?$ harta.php [L,QSA]
+    
+    RewriteRule ^ascensiune/?$ first.php [L,QSA]
+    RewriteRule ^persecutie/?$ second.php [L,QSA]
+    RewriteRule ^kindertransport/?$ third.php [L,QSA]
+    RewriteRule ^deportari/?$ fourth.php [L,QSA]
+    RewriteRule ^einsatzgruppen/?$ fifth.php [L,QSA]
+    RewriteRule ^lagare/?$ sixth.php [L,QSA]
+    RewriteRule ^rezistenta/?$ seventh.php [L,QSA]
+    RewriteRule ^marsuri/?$ eight.php [L,QSA]
+    RewriteRule ^reconstruirea/?$ nine.php [L,QSA]
+    RewriteRule ^dreptatea/?$ ten.php [L,QSA]
+    RewriteRule ^holocaustastazi/?$ tenf.php [L,QSA]
+    RewriteRule ^vasileszekely/?$ vasile.php [L,QSA]
+    RewriteRule ^salamongolda/?$ salamon.php [L,QSA]
+    RewriteRule ^test_holocaust/?$ test_holocaust.php [L,QSA]
+
+    # Optionally, route the root URL to index.php
+    RewriteRule ^$ index.php [L,QSA]
+</IfModule>
+

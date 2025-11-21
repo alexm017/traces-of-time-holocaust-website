@@ -1,0 +1,141 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat-Medium';
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium'; 
+    src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeRise {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes GradientPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.background-container {
+    background: #0c0c0c;
+    position: relative;
+    height: 100%;
+    opacity: 0.92;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+    background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+}
+
+.welcome-text{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600; /* Semi-bold for readability */
+    letter-spacing: 1px;
+    font-size: 25px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: 18%;
+    animation: fadeIn 1s ease-in-out forwards;
+    color: white;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.alphabit-topleft {
+	position: absolute;
+	top: 4%;
+	left: 2%;
+	color: #cdcdcd;
+	font-size: 25px;
+	font-weight: 600;
+	animation: fadeIn 1s ease-in-out forwards;
+	cursor: pointer;
+}
+
+.alphabit-topleft a{
+	text-decoration: none;
+	color: #cdcdcd;
+}
+
+.background-button{
+	top: 45%;
+	left: 45%;
+	font-weight: 600;
+	position: absolute;
+	animation: fadeIn 1s ease-in-out forwards;
+	background: #0071dd;
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  border-radius:25px;
+	  cursor: pointer;
+}
+
+.background-button a{
+	color: white;
+	text-decoration: none;
+}
+
+.learn-text{
+	position: absolute;
+	top: 52.5%;
+	left: 40.5%;
+	color: white;
+	text-align:center;
+	animation: fadeIn 1s ease-in-out forwards;
+	font-family: sans-serif;
+}
+
+.welcome-logo {
+    position: relative;
+    top: 1.5%;
+    left: 3%;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.ai-star-logo{
+	position: absolute;
+	top: 2.5%;
+	left: 14.5%;
+	animation: fadeIn 1s ease-in-out forwards;
+}

@@ -1,0 +1,276 @@
+/* ───────────────────── 1. BASE TOKENS ───────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --clr-bg-900:#070707;
+  --clr-bg-700:#161616;
+  --clr-bg-500:#252525;
+  --clr-primary:#cccccc;
+  --clr-accent:#a8a8a8;
+
+  --ff-base:'Montserrat-Medium',Helvetica,Arial,sans-serif;
+  --step--2:clamp(.66rem,.76vw,.8rem);
+  --step--1:clamp(.75rem,.9vw,.95rem);
+  --step-0 :clamp(.88rem,1vw,1.06rem);
+  --step-1 :clamp(1rem,1.1vw,1.25rem);
+  --step-2 :clamp(1.25rem,1.35vw,1.56rem);
+  --step-3 :clamp(1.56rem,1.75vw,1.95rem);
+}
+@font-face{
+  font-family:'Montserrat-Medium';
+  src:url('../fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight:normal;font-style:normal;
+}
+
+html{scroll-behavior:smooth;font-size:100%}
+body{
+  margin:0;min-height:100dvh;display:flex;flex-direction:column;
+  font:var(--step-0)/1.45 var(--ff-base);
+  color:var(--clr-primary);
+  background:var(--clr-bg-900);
+}
+
+/* utilities */
+.flow>*+*{margin-block-start:var(--flow-space,1em)}
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;
+  padding:.65em 1.1em;font:var(--step--1) var(--ff-base);font-weight:600;
+  color:#2f2f2f;text-decoration:none;border-radius:1.3em;
+  background:radial-gradient(circle,var(--clr-accent)0%,#b2b2b2 100%);
+  transition:transform .15s ease,background .3s;
+}
+.btn:hover{background:#8c8c8c}
+.clamp-img{width:100%;height:auto;border-radius:.75rem}
+
+/* keyframes */
+@keyframes fadeIn{0%{opacity:0;transform:translateY(-.25rem)}100%{opacity:1}}
+@keyframes down{0%,40%{transform:translateY(0)}20%{transform:translateY(.55rem)}}
+
+/* ───────────────────── 2. GLOBAL LAYOUT ─────────────────── */
+/* 2.1 header */
+.header{
+  position:sticky;top:0;z-index:1000;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.8rem clamp(1rem,4vw,2.25rem);
+  background:rgba(7,7,7,.8);backdrop-filter:blur(6px);
+}
+.brand{font:var(--step-1) var(--ff-base);font-weight:600;color:var(--clr-primary);text-decoration:none}
+.nav{display:flex;gap:.75rem;flex-wrap:wrap}
+
+/* 2.2 hero (index only) */
+.hero{
+  flex:1;
+  background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.9)),url("/assets/images/holocaust-main.jpg") center/cover no-repeat;
+  display:grid;place-content:center;text-align:center;
+  padding:clamp(4rem,9vw,10rem) 2rem;
+  animation:fadeIn 1s forwards;
+}
+.hero h1{font:var(--step-3)/1.15 var(--ff-base);margin:0}
+.hero p {font:var(--step-1);max-width:45ch;margin-inline:auto}
+.hero .btn{margin-block-start:1.6rem}
+
+/* 2.3 page banner (carti & filme) */
+.page-banner{
+  background:linear-gradient(#555 0%,#a1a1a1 100%);
+  text-align:center;padding:clamp(3rem,6vw,4rem) 2rem;
+}
+.page-banner h1{margin:0;font:var(--step-3) var(--ff-base)}
+
+/* 2.4 content layout with optional sidebar */
+.layout{padding:clamp(2rem,6vw,3rem)}
+@media(min-width:768px){
+  .layout{
+    display:grid;
+    grid-template-columns:minmax(200px,250px) 1fr;
+    gap:clamp(1.5rem,4vw,2.5rem);
+  }
+}
+
+/* 2.5 sidebar */
+.sidebar{
+  background:#424242;color:var(--clr-primary);
+  padding:1.25rem;border-radius:1rem;box-shadow:0 0 .75rem rgba(0,0,0,.25);
+  height:fit-content;
+}
+@supports(position:sticky){.sidebar{position:sticky;top:7rem}}
+.sidebar a{display:block;color:var(--clr-primary);text-decoration:none;padding:.4rem .25rem;border-radius:.3rem}
+.sidebar a:hover{background:#525252}
+
+/* 2.6 card grid (books & films) */
+.card-grid{
+  --min:260px;
+  display:grid;gap:clamp(1rem,3vw,1.5rem);
+  grid-template-columns:repeat(auto-fill,minmax(var(--min),1fr));
+}
+.card{
+  background:#1f1f1f;border-radius:1rem;overflow:hidden;
+  display:flex;flex-direction:column;animation:fadeIn .8s both;
+}
+.card img{object-fit:cover;max-height:260px;width:100%}
+.card-content{padding:1rem;display:flex;flex-direction:column;gap:.55rem}
+.card h3{font:var(--step-1)/1.2 var(--ff-base);margin:0}
+.card p {font:var(--step--1);margin:0;color:#e0e0e0}
+.card .btn{align-self:flex-start;margin-top:auto}
+
+/* 2.7 contact section (RESTORED) */
+.contact{background:#505050;padding-block:4rem}
+.contact-wrapper{
+  max-width:1100px;margin-inline:auto;
+  display:grid;gap:clamp(2rem,6vw,4rem);
+}
+@media(min-width:900px){.contact-wrapper{grid-template-columns:1fr 1fr}}
+.contact-form{
+  display:grid;gap:1rem;background:#424242;
+  padding:2rem;border-radius:1rem;
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;padding:.75rem 1rem;border:none;
+  border-radius:.75rem;font:var(--step--1) var(--ff-base);color:#000;
+}
+.contact-form textarea{min-height:8rem;resize:vertical}
+.contact-info{color:#252525;font:var(--step-0) var(--ff-base)}
+.contact-info p{margin:0}
+.contact-info a{color:#252525;text-decoration:underline}
+.mapouter{width:100%;aspect-ratio:650/450;position:relative}
+.gmap_iframe{width:100%!important;height:100%!important;border-radius:.75rem}
+
+/* 2.8 footer */
+.footer{
+  background:var(--clr-bg-700);margin-top:auto;
+  padding:2rem 1rem;text-align:center;
+}
+.social-list{display:flex;justify-content:center;gap:1rem;list-style:none;margin:0 0 1rem;padding:0}
+.fa{padding:.8rem;font-size:1.25rem;width:2.5rem;text-align:center;border-radius:1rem;color:#ccc}
+.fa-linkedin{background:#007bb5}.fa-facebook{background:#3B5998}
+.fa-youtube {background:#bb0000}.fa-instagram{background:#125688}
+.fa:hover{opacity:.85}
+
+/* 2.9 scroll indicator (index only) */
+.scroll-indicator{
+  --sz:3rem;
+  width:var(--sz);height:var(--sz);
+  border:2px solid #333;border-radius:50%;
+  margin-inline:auto;margin-block-start:3rem;
+  animation:down 1.5s infinite;
+}
+.scroll-indicator::before{
+  content:'';position:absolute;inset:0;margin:auto;
+  width:40%;height:40%;
+  border-left:2px solid #333;border-bottom:2px solid #333;
+  transform:rotate(-45deg);
+}
+
+/* ───────────────────── 3. MEDIA QUERIES ─────────────────── */
+@media(min-width:576px){.hero{padding:6rem 2rem}}
+@media(min-width:768px){
+  .header{padding:.9rem clamp(2rem,5vw,3rem)}
+  .nav .btn{font:var(--step-0)}
+}
+@media(min-width:992px){
+  .hero{text-align:left;grid-template-columns:1fr minmax(auto,520px)}
+}
+
+/* ─── featured images on the homepage ─── */
+.featured-img{
+  max-width:420px;               /* hard ceiling on width */
+  margin-inline:auto;            /* centres on mobile; sits flush in grid on desktop */
+  border-radius:1rem;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,.45);
+  animation:fadeIn .8s both;
+}
+.featured-img img{display:block;width:100%;height:auto}
+
+@media(min-width:992px){         /* give them a little stagger for large screens */
+  .featured-img:first-of-type{transform:translateY(10%)}
+}
+
+/* ─── homepage featured images ───────────────────────────── */
+.featured-img{
+  position:relative;
+  max-width:480px;          /* never exceed this width */
+  aspect-ratio:4/3;         /* elegant, consistent shape */
+  border-radius:1rem;
+  overflow:hidden;
+  margin-inline:auto;       /* centre on phones */
+  box-shadow:0 6px 18px rgba(0,0,0,.45);
+  animation:fadeIn .8s both;
+}
+@media(min-width:992px){
+  /* adds a gentle stagger on wide screens */
+  .featured-img:first-of-type{transform:translateY(10%)}
+}
+.featured-img img{
+  width:100%;height:100%;
+  object-fit:cover;         /* fills the rectangle */
+}
+.featured-img figcaption{
+  position:absolute;inset:auto 0 0 0;     /* pinned to bottom */
+  padding:.6rem 1rem;
+  background:rgba(0,0,0,.6);
+  color:var(--clr-primary);
+  font:var(--step--1) var(--ff-base);
+  line-height:1.35;
+  transform:translateY(100%);              /* hidden below */
+  transition:transform .35s ease;
+}
+.featured-img:hover figcaption,
+.featured-img:focus-within figcaption{
+  transform:translateY(0);                 /* slide up on hover/tap */
+}
+
+/* ─── side-by-side featured images  (homepage only) ─── */
+.featured-pair{
+  display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;
+}
+.featured-pair .featured-img{flex:1 1 280px;max-width:420px}
+
+/* stagger the second image on medium+ screens */
+@media(min-width:768px){
+  .featured-pair .featured-img:nth-child(2){transform:translateY(10%)}
+}
+
+/* ─── fine-tune homepage image pair ─────────────────────── */
+
+/* push the whole fpage block a bit taller so cards never overlap the
+   grey contact section that follows */
+.fpage{
+  padding-bottom:6rem;        /* was 4rem; adds 2rem breathing room */
+}
+
+/* centre horizontally, align to the top edge so margin-top works */
+.featured-pair{justify-content:center;align-items:flex-start}
+
+/* stagger: right-hand card lower than the left on medium+ screens */
+@media(min-width:768px){
+  .featured-pair .featured-img:nth-child(2){
+    margin-top:2.5rem;        /* ≈40 px drop */
+    transform:none;           /* remove previous translateY if present */
+  }
+}
+
+/* ─── MOBILE POLISH ───────────────────────────────────────── */
+
+/* 1. Header / navbar (≤600 px) */
+@media(max-width:600px){
+  .header{
+    flex-direction:column;        /* brand on first row, buttons below */
+    align-items:flex-start;
+    gap:.6rem;                    /* space between the two rows */
+    padding:1rem 1rem;            /* a touch more side padding */
+  }
+  .nav{
+    flex-wrap:wrap;
+    gap:.5rem;
+    justify-content:flex-start;   /* left-align buttons */
+  }
+}
+
+/* 2. Disable sticky sidebar on narrow screens (fix overlap) */
+@media(max-width:767px){
+  .sidebar{
+    position:static!important;    /* scrolls away naturally */
+    margin-bottom:1.5rem;         /* gap before the card grid */
+  }
+}
+

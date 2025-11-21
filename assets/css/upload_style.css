@@ -1,0 +1,330 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat-Medium';
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium'; 
+    src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.background-container {
+    background: #0c0c0c;
+    opacity: 0.92;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-size: 400% 400%;
+    z-index: 1;
+}
+
+@keyframes GradientPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.welcome-logo {
+    position: absolute;
+    top: 1.5%;
+    left: 3%;
+    cursor: pointer;
+}
+
+.welcome-logo a{
+	text-decoration: none;
+}
+
+.drag-zone {
+    z-index: 3;
+    width: 50vw;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px dashed #1ea8b5;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(30, 168, 181, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 3;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+.drag-zone:hover,
+.drag-zone.dragover {
+    border-color: #00f3ff;
+    background: rgba(0, 243, 255, 0.15);
+}
+
+#file-input {
+    display: none;
+}
+
+.upload-instructions {
+    font-family: 'Montserrat', sans-serif;
+    color: #1ea8b5;
+    text-align: center;
+    margin: 20px;
+}
+
+.message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 3;
+}
+
+.success {
+    background: rgba(0, 243, 255, 0.2);
+    color: #00f3ff;
+    border: 1px solid #00f3ff;
+}
+
+.error {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff4444;
+    border: 1px solid #ff4444;
+}
+
+.passkey-text{
+    top: 38.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.passbox{
+	top:43%;
+	left: 50%;
+	transform: translate(-50%, -5%);
+	position: absolute;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 15px;
+	background-color:   #d5d5d5   ;
+	color:black;
+	padding: 3.5px 10px;
+	border: none;
+	text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+}
+
+.submitbox{
+	top:49%;
+	left: 50%;
+	transform: translate(-50%, -5%);
+	position: absolute;
+	background-color: #22bae0 ;
+	border-radius: 25px;
+	  border: none;
+	  color: white;
+	  padding: 8px 20px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  cursor: pointer;
+}
+
+.logout-button{
+	top:3%;
+	left:93%;
+	position: absolute;
+	color: black;
+	background: linear-gradient(135deg, #d7d7d7 0%,    #838383  100%);
+	padding: 8px 20px;
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+.logout-button a{
+	text-decoration: none;
+	color: black;
+}
+
+.availableKits{
+	top:15%;
+	left:5%;
+	position: absolute;
+	color: white;
+	font-weight: 600;
+	font-size: 25px;
+}
+
+.gatherTrainingData-button{
+	top:20%;
+	left:8%;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	position: absolute;
+}
+
+.gatherTrainingData-download{
+	top:24%;
+	left:8%;
+	position: absolute;
+	color: black;
+	font-weight: 600;
+	padding: 8px 15px;
+	background: linear-gradient(135deg, #44eeb8  0%, #05e49e    100%);
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+.gatherTrainingData-download a{
+	text-decoration: none;
+	color: black;
+}
+
+.alpha-button{
+	top:30%;
+	left:8%;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	position: absolute;
+}
+
+.alpha-download{
+	top:34%;
+	left:8%;
+	position: absolute;
+	color: black;
+	font-weight: 600;
+	padding: 8px 15px;
+	background: linear-gradient(135deg, #44eeb8  0%, #05e49e    100%);
+	border-radius: 25px;
+	cursor: not-allowed;
+}
+
+.trainingStats{
+	top:45%;
+	left:5%;
+	color: white;
+	font-weight: 600;
+	font-size: 25px;
+	position: absolute;
+}
+
+.redSampleStats{
+	top:50%;
+	left:8%;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	position: absolute;
+}
+
+.blueSampleStats{
+	top:54%;
+	left:8%;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	position: absolute;
+}
+
+.yellowSampleStats{
+	top:58%;
+	left:8%;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	position: absolute;
+}
+
+.totalSampleStats{
+	top:62%;
+	left:8%;
+	color: white;
+	font-weight: 600;
+	font-size: 20px;
+	position: absolute;
+}
+
+.tasksText{
+	top:15%;
+	left: 42.5%;
+	position: absolute;
+	color: white;
+	font-size: 25px;
+	font-weight: 600;
+}
+
+.imageTransfer{
+	top:15%;
+	left: 65%;
+	position: absolute;
+	color: white;
+	font-size: 25px;
+	font-weight: 600;
+}
+
+.uploadData{
+	top:21.5%;
+	left:65%;
+	position: absolute;
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.uploadForm{
+	top:25%;
+	left:65%;
+	position: absolute;
+}
+
+.uploadButton{
+	top:150%;
+	left:0%;
+	position: absolute;
+	background: linear-gradient(135deg,  #e3ea14   0%,  #72d317     100%);
+	border: none;
+	padding: 7px 20px;
+	border-radius: 25px;
+}
+
+.downloadData{
+	top:35%;
+	left:65%;
+	position: absolute;
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.downloadForm{
+	top:25%;
+	left:65%;
+	position: absolute;
+}
+
+.downloadButton{
+	top:150%;
+	left:0%;
+	position: absolute;
+	background: linear-gradient(135deg,  #e3ea14   0%,  #72d317     100%);
+	border: none;
+	padding: 7px 20px;
+	border-radius: 25px;
+}
