@@ -44,6 +44,7 @@ if($password != "" && $email != "" && $teamname != ""){
 	<link rel="stylesheet" href="assets/css/rstyle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/holocaust-logo.ico" />
+  <link rel="stylesheet" href="/assets/css/chat.css">
 </head>
 <body>
     <div class="background-container">
@@ -97,5 +98,38 @@ if($password != "" && $email != "" && $teamname != ""){
             }
         });
     </script>
+
+  <!-- Chat Widget -->
+  <div id="chat-bubble" class="chat-bubble">
+    Psst... vrei să încerci Asistentul AI?
+  </div>
+  <button id="chat-toggle-btn" class="chat-toggle-btn" aria-label="Deschide Chat AI">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+
+  <div id="chat-window" class="chat-window">
+    <div class="chat-header">
+      <h3>Asistent Virtual</h3>
+      <button id="chat-close-btn" class="chat-close-btn" aria-label="Închide Chat">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div id="chat-messages" class="chat-messages">
+      <div class="message ai">Salut! Sunt asistentul tău virtual. Cu ce te pot ajuta astăzi legat de istoria Holocaustului?</div>
+      <div id="typing-indicator" class="typing-indicator">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Scrie un mesaj...">
+      <button id="chat-send-btn" class="chat-send-btn" aria-label="Trimite">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <script src="/assets/js/chat.js"></script>
 </body>
 </html>

@@ -1,16 +1,17 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: 'Montserrat-Medium';
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat-Medium';
 }
 
 @font-face {
-    font-family: 'Montserrat-Medium'; 
-    src: url('fonts/Montserrat-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Montserrat-Medium';
+  src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @keyframes fadeIn {
@@ -18,6 +19,7 @@ body, html {
     opacity: 0;
     transform: translateY(-2.5px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -29,6 +31,7 @@ body, html {
     opacity: 0;
     transform: translateY(0px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -39,9 +42,11 @@ body, html {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -52,6 +57,7 @@ body, html {
     opacity: 0;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -59,351 +65,361 @@ body, html {
 }
 
 @keyframes GradientPulse {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* BASE DESIGN */
 .background-container {
-    background: #151515;
-    position: relative;
-    height: 100%;
-    opacity: 0.92;
-    overflow-x: auto;
-    scrollbar-width: 0;
-    scrollbar-height: 0;
-    -ms-overflow-style: none;
-    transition: opacity 0.5s ease;
-    background-size: 100% 100%;
-    width: 100vw;
+  background: #a79f91;
+  /* Darker than rbox */
+  position: relative;
+  height: 100%;
+  opacity: 0.92;
+  overflow-x: auto;
+  scrollbar-width: 0;
+  scrollbar-height: 0;
+  -ms-overflow-style: none;
+  transition: opacity 0.5s ease;
+  background-size: 100% 100%;
+  width: 100vw;
 }
 
-.background-container::-webkit-scrollbar{
-	display: none;
+.background-container::-webkit-scrollbar {
+  display: none;
 }
 
 .fpage {
-    background: #070707;
-    position: relative;
-    height: 100%;
-    opacity: 0.92;
-    overflow-x: auto;
-    transition: opacity 0.5s ease;
-    background-size: 400% 400%;
+  background: #a79f91;
+  position: relative;
+  height: 100%;
+  opacity: 0.92;
+  overflow-x: auto;
+  transition: opacity 0.5s ease;
+  background-size: 400% 400%;
 }
 
 .cpage {
-    display: flex;
-    background: #070707;
-    position: relative;
-    height: 100vh;
-    opacity: 0.92;
-    overflow-x: auto;
-    transition: opacity 0.5s ease;
-    background-size: 400% 400%;
+  display: flex;
+  background: #a79f91;
+  position: relative;
+  height: 100vh;
+  opacity: 0.92;
+  overflow-x: auto;
+  transition: opacity 0.5s ease;
+  background-size: 400% 400%;
 }
 
 .alphabit-topleft {
-    position: absolute;
-    top: 5vh;
-    left: 12vh;
-    color: #cdcdcd;
-    font-size: 20px;
-    font-weight: 600;
-    animation: fadeIn 1s ease-in-out forwards;
-    cursor: pointer;
+  position: absolute;
+  top: 5vh;
+  left: 12vh;
+  color: #8B4513;
+  font-size: 20px;
+  font-weight: 600;
+  animation: fadeIn 1s ease-in-out forwards;
+  cursor: pointer;
 }
 
 .alphabit-topleft a {
-    text-decoration: none;
-    color: #cdcdcd;
+  text-decoration: none;
+  color: #8B4513;
 }
 
 .ai-star-logo {
-    position: absolute;
-    top: 4vh;
-    left: 33vh;
-    animation: fadeIn 1s ease-in-out forwards;
+  position: absolute;
+  top: 4vh;
+  left: 33vh;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .docs {
-    position: absolute;
-    top: 9.5vh;
-    left: 17vh;
-    color: #cdcdcd;
-    animation: fadeIn 1s ease-in-out forwards;
-    font-size: 17px;
+  position: absolute;
+  top: 9.5vh;
+  left: 17vh;
+  color: #8B4513;
+  animation: fadeIn 1s ease-in-out forwards;
+  font-size: 17px;
 }
 
 .blur-line {
   position: fixed;
-  width: 1%;      
-  height: 100%;       
-  background: #202020; 
-  filter: blur(15px); 
+  width: 0.75%;
+  height: 100vh;
+  background: #585858;
+  filter: blur(15px);
 }
 
 .rbox {
-    position: absolute;
-    left: 46.5vh;
-    background: linear-gradient(#343434 0%, #5c5c5c 100%);
-    top: 0;
-    right: 0;
-    scrollbar-width: 0;
-    -ms-overflow-style: none;
-    scrollbar-height: 0;
-    bottom: 0;
-    overflow-y: auto;
-    overflow-x: auto;
+  position: absolute;
+  left: 46.5vh;
+  background: rgb(202, 199, 181);
+  top: 0;
+  right: 0;
+  scrollbar-width: 0;
+  -ms-overflow-style: none;
+  scrollbar-height: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
-.rbox::-webkit-scrollbar{
-	display: none;
+.rbox::-webkit-scrollbar {
+  display: none;
 }
 
-.profile-text{
-	z-index: 2;
-	position: absolute;
-	top:5%;
-	left:92%;
-	color: #cccccc;
-	font-weight: 600;
-	animation: fadeIn 1s ease-in-out forwards;
+.profile-text {
+  z-index: 2;
+  position: absolute;
+  top: 5%;
+  left: 92%;
+  color: #8B4513;
+  font-weight: 600;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
-.profile-text a{
-	text-decoration: none;
-	color: #cccccc;
+.profile-text a {
+  text-decoration: none;
+  color: #8B4513;
 }
 
-.alphabit-profile-teamname-pic{
-	z-index: 2;
-	position: absolute;
-	top: 3.5%;
-	left: 95.75%;
-	animation: fadeIn 1s ease-in-out forwards;
-	cursor: pointer;
+.alphabit-profile-teamname-pic {
+  z-index: 2;
+  position: absolute;
+  top: 3.5%;
+  left: 95.75%;
+  animation: fadeIn 1s ease-in-out forwards;
+  cursor: pointer;
 }
 
 .docsLine {
-    animation: fadeIn 1s ease-in-out forwards;
-    margin-top: 25px;
-    left: 0vh;
-    background: #242424;
-    width: 27vh;
-    height: 1px;
+  animation: fadeIn 1s ease-in-out forwards;
+  margin-top: 25px;
+  left: 0vh;
+  background: #242424;
+  width: 27vh;
+  height: 1px;
 }
 
 
 .docs-container {
-    position: relative;
-    margin-top: 17vh;
-    margin-left: 12vh;
-    color: #cdcdcd;
-    animation: fadeIn 1s ease-in-out forwards;
-    max-width: 350px;
+  position: relative;
+  margin-top: 17vh;
+  margin-left: 12vh;
+  color: #8B4513;
+  animation: fadeIn 1s ease-in-out forwards;
+  max-width: 350px;
 }
 
 .setup {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    max-width: 350px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  max-width: 350px;
 }
 
 .sub-section {
-    margin-top: 17.5px;
-    max-width: 325px;
-    font-size: 14px;
-    cursor: pointer;
-    color: #b5b5b5;
+  margin-top: 17.5px;
+  max-width: 325px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #8B4513;
 }
 
 .sub-section a {
-    text-decoration: none;
-    color: #b5b5b5;
+  text-decoration: none;
+  color: #8B4513;
 }
 
 .sub-section:hover a {
-    color: #c67171;
+  color: #c67171;
 }
 
 .title {
-    position: relative;
-    top: 13.5vh;
-    left: 14vh;
-    color: #fcfcfc;
-    font-weight: 600;
-    font-size: 30px;
-    animation: fadeIn 1s ease-in-out forwards;
+  position: relative;
+  top: 13.5vh;
+  left: 14vh;
+  color: #8B4513;
+  font-weight: 600;
+  font-size: 30px;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .text-container {
-    position: relative;
-    margin-top: 17vh;
-    margin-left: 20vh;
-    color: #d3d3d3;
-    animation: fadeIn 1s ease-in-out forwards;
+  position: relative;
+  margin-top: 17vh;
+  margin-left: 20vh;
+  color: #8B4513;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .news {
-    position: relative;
-    top: 1vh;
-    left: 40vh;
-    color: #d3d3d3;
-    animation: fadeIn 1s ease-in-out forwards;
+  position: relative;
+  top: 1vh;
+  left: 40vh;
+  color: #d3d3d3;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .temporarynews {
-    position: relative;
-    top: 2vh;
-    left: 55vh;
-    color: #959595;
-    animation: fadeIn 1s ease-in-out forwards;
+  position: relative;
+  top: 2vh;
+  left: 55vh;
+  color: #8B4513;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .ftext {
-    font-size: 16px;
-    color: #d3d3d3;
-    max-width: 800px;
+  font-size: 16px;
+  color: #8B4513;
+  max-width: 800px;
 }
 
 .stext {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #d3d3d3;
-    max-width: 800px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #8B4513;
+  max-width: 800px;
 }
 
 .stext a {
-    text-decoration: none;
-    color: #d3d3d3;
+  text-decoration: none;
+  color: #8B4513;
 }
 
 .pic-text {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #d3d3d3;
-    max-width: 450px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #8B4513;
+  max-width: 450px;
 }
 
 .pic-text a {
-    text-decoration: none;
-    color: #d3d3d3;
+  text-decoration: none;
+  color: #8B4513;
 }
 
-.pic-ntext{
-	margin-left: 500px;
-	margin-top: -135px;
-	border-radius: 20px;
+.pic-ntext {
+  margin-left: 500px;
+  margin-top: -135px;
+  border-radius: 20px;
 }
 
 .downloadbtn {
-    margin-top: 20px;
-    border-radius: 20px;
-    background: #dadada;
-    max-width: 85px;
-    padding: 10px;
-    color: black;
-    border: none;
-    font-weight: 600;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: #dadada;
+  max-width: 85px;
+  padding: 10px;
+  color: black;
+  border: none;
+  font-weight: 600;
 }
 
 .downloadbtn a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: #8B4513;
 }
-    
+
 .line {
-    white-space: pre;
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
+  white-space: pre;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 .rtext {
-    margin-top: 10px;
-    margin-left: 5vh;
-    font-size: 16px;
-    color: #d3d3d3;
-    max-width: 750px;
+  margin-top: 10px;
+  margin-left: 5vh;
+  font-size: 16px;
+  color: #8B4513;
+  max-width: 750px;
 }
 
 .code-window {
-    background: #040404;
-    border: 1px solid #444;
-    border-radius: 5px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-height: 80vh;
-    max-width: 800px;
-    margin: 0;
-    padding: 20px;
+  background: #040404;
+  border: 1px solid #444;
+  border-radius: 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 80vh;
+  max-width: 800px;
+  margin: 0;
+  padding: 20px;
 }
 
 .codee-window {
-    background: #040404;
-    border: 1px solid #444;
-    border-radius: 5px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-height: 80vh;
-    max-width: 800px;
-    margin: 0;
-    padding: 1px;
+  background: #040404;
+  border: 1px solid #444;
+  border-radius: 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 80vh;
+  max-width: 800px;
+  margin: 0;
+  padding: 1px;
 }
 
 pre {
-    margin: 0;
-    color: #040404;
-    font-size: 14px;
-    line-height: 1.5;
-    white-space: pre-wrap;
+  margin: 0;
+  color: #040404;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 pre code {
-    background: #040404 !important;
+  background: #040404 !important;
 }
 
 .endLine {
-    animation: fadeIn 1s ease-in-out forwards;
-    margin-top: 60px;
-    left: 0vh;
-    background: #242424;
-    width: 87vh;
-    height: 1px;
+  animation: fadeIn 1s ease-in-out forwards;
+  margin-top: 60px;
+  left: 0vh;
+  background: #242424;
+  width: 87vh;
+  height: 1px;
 }
 
 .endLinee {
-    animation: fadeIn 1s ease-in-out forwards;
-    position: absolute;
-    margin-top: 45px;
-    left: 0vh;
-    background: #242424;
-    width: 87vh;
-    height: 1px;
+  animation: fadeIn 1s ease-in-out forwards;
+  position: absolute;
+  margin-top: 45px;
+  left: 0vh;
+  background: #242424;
+  width: 87vh;
+  height: 1px;
 }
 
 .endD {
-    margin-top: 100px;
-    color: #b1a0d3;
-    font-weight: 600;
-    cursor: pointer;
+  margin-top: 100px;
+  color: #b1a0d3;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .endD a {
-    text-decoration: none;
-    color: #b1a0d3;
+  text-decoration: none;
+  color: #b1a0d3;
 }
 
 .end {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .bc {
-    color: white;
+  color: #5D2E0C;
+  /* Darker shade for bold text */
 }
 
 /* RESPONSIVE ADJUSTMENTS */
@@ -415,12 +431,14 @@ pre code {
 
 /* For screens up to 768px (tablets and landscape phones) */
 @media only screen and (max-width: 768px) {
-  html, body {
+
+  html,
+  body {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
   }
-  
+
   .background-container {
     width: 100vw;
     height: 100vh;
@@ -428,83 +446,86 @@ pre code {
     min-height: 100vh;
     overflow-x: hidden;
   }
-  
+
   .rbox {
-    position: relative; 
+    position: relative;
     left: 0;
     width: 100%;
     height: 100%;
   }
-  
+
   .alphabit-topleft {
     top: 3vh;
     left: 5vw;
     font-size: 18px;
   }
-  
+
   .ai-star-logo {
     top: 3vh;
     left: 302vw;
     max-width: 30vw;
   }
-  
+
   .docs {
     top: 7vh;
     left: 5vw;
     font-size: 15px;
   }
-  
+
   .docsLine {
     width: 40vw;
   }
-  
+
   .docs-container {
     margin-top: 10vh;
     margin-left: 5vw;
     max-width: 90%;
   }
-  
+
   .title {
     top: 10vh;
     left: 5vw;
     font-size: 24px;
-    margin-bottom: 13vh;  /* Added spacing to prevent overlap */
+    margin-bottom: 13vh;
+    /* Added spacing to prevent overlap */
   }
-  
+
   .text-container {
     margin-top: 8vh;
     margin-left: 5vw;
     max-width: 90%;
   }
-  
+
   .news {
     top: 1vh;
     left: 5vw;
     font-size: 16px;
   }
-  
+
   .temporarynews {
     top: 2vh;
     left: 22.5vw;
     font-size: 16px;
   }
-  
+
   .downloadbtn {
     max-width: 91px;
     padding: 8px;
   }
-  
+
   .rtext {
     margin-left: 3vw;
   }
-  
-  .code-window, .codee-window {
+
+  .code-window,
+  .codee-window {
     max-width: 90vw;
     max-height: 60vh;
     padding: 10px;
   }
-  
-  .endLine, .endLinee {
+
+  .endLine,
+  .endLinee {
     width: 90vw;
   }
 }
@@ -516,71 +537,74 @@ pre code {
     left: 3vw;
     font-size: 16px;
   }
-  
+
   .ai-star-logo {
     top: 2vh;
     left: 25vw;
     max-width: 25vw;
   }
-  
+
   .docs {
     top: 5vh;
     left: 3vw;
     font-size: 14px;
   }
-  
+
   .docsLine {
     width: 60vw;
   }
-  
+
   .docs-container {
     margin-top: 8vh;
     margin-left: 3vw;
     max-width: 95%;
   }
-  
+
   .title {
     top: 8vh;
     left: 3vw;
     font-size: 20px;
-    margin-bottom: 10vh;  /* Added spacing to prevent overlap */
+    margin-bottom: 10vh;
+    /* Added spacing to prevent overlap */
   }
-  
+
   .text-container {
     margin-top: 6vh;
     margin-left: 3vw;
     max-width: 95%;
   }
-  
+
   .news {
     top: 1vh;
     left: 3vw;
     font-size: 14px;
   }
-  
+
   .temporarynews {
     top: 2vh;
     left: 11vw;
     font-size: 14px;
   }
-  
+
   .downloadbtn {
     max-width: 91px;
     padding: 6px;
   }
-  
+
   .rtext {
     margin-left: 3vw;
     font-size: 14px;
   }
-  
-  .code-window, .codee-window {
+
+  .code-window,
+  .codee-window {
     max-width: 95vw;
     max-height: 50vh;
     padding: 8px;
   }
-  
-  .endLine, .endLinee {
+
+  .endLine,
+  .endLinee {
     width: 95vw;
   }
 }
@@ -589,42 +613,62 @@ pre code {
 /* When using a computer with a short viewport (ideal based on a 1080px‑tall layout) */
 @media only screen and (min-width: 1024px) and (max-height: 800px) {
   .alphabit-topleft {
-    top: 54px;       /* 5vh on 1080px */
-    left: 183px;     /* 17vh on 1080px */
+    top: 54px;
+    /* 5vh on 1080px */
+    left: 183px;
+    /* 17vh on 1080px */
     font-size: 20px;
   }
+
   .ai-star-logo {
-    top: 43px;       /* 4vh on 1080px */
-    left: 375px;     /* 38vh on 1080px */
+    top: 43px;
+    /* 4vh on 1080px */
+    left: 375px;
+    /* 38vh on 1080px */
   }
+
   .docs {
-    top: 103px;      /* 9.5vh on 1080px */
+    top: 103px;
+    /* 9.5vh on 1080px */
     left: 183px;
     font-size: 17px;
   }
+
   .docs-container {
-    margin-top: 184px;  /* 17vh on 1080px */
+    margin-top: 184px;
+    /* 17vh on 1080px */
     margin-left: 183px;
     max-width: 350px;
   }
+
   .title {
-    top: 145px;     /* 13.5vh on 1080px */
-    left: 151px;    /* 14vh on 1080px */
+    top: 145px;
+    /* 13.5vh on 1080px */
+    left: 151px;
+    /* 14vh on 1080px */
     font-size: 30px;
   }
+
   .text-container {
-    margin-top: 184px; /* 17vh on 1080px */
-    margin-left: 216px; /* 20vh on 1080px */
+    margin-top: 184px;
+    /* 17vh on 1080px */
+    margin-left: 216px;
+    /* 20vh on 1080px */
   }
+
   .rbox {
-    left: 502px;    /* 46.5vh on 1080px */
+    left: 502px;
+    /* 46.5vh on 1080px */
   }
+
   .docsLine {
-    width: 292px;   /* 27vh on 1080px */
+    width: 292px;
+    /* 27vh on 1080px */
   }
+
   .endLine,
   .endLinee {
-    width: 940px;   /* 87vh on 1080px */
+    width: 940px;
+    /* 87vh on 1080px */
   }
 }
-
